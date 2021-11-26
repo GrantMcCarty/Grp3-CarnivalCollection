@@ -7,6 +7,19 @@ TagManager:
   - Item
   - Target
   - Ground
+  - Peg
+  - Piece
+  - PiecesLeft
+  - PlinkoScore
+  - HUD
+  - Despawner
+  - SmallScore
+  - MediumScore
+  - LargeScore
+  - JackPot
+  - ScoreTrigger
+  - ZeroScore
+  - Save
   layers:
   - Default
   - TransparentFX
