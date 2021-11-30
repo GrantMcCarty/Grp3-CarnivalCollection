@@ -7,7 +7,7 @@ public class PlayerState : MonoBehaviour
     PlayerStatistics localPlayerData = new PlayerStatistics();
     void Start()
     {
-        localPlayerData = GlobalControl.Instance.savedPlayerData;
+        // localPlayerData = GlobalControl.Instance.savedPlayerData;
     }
 
     public void SavePlayer()

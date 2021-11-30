@@ -25,7 +25,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1948713636054381156, guid: a6b01535e56fafe4c90f0f88d733a146, type: 3}
       propertyPath: m_Name
-      value: Ball
+      value: Ball(with gravitY)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121976491652715443, guid: a6b01535e56fafe4c90f0f88d733a146, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6966537845647995258, guid: a6b01535e56fafe4c90f0f88d733a146, type: 3}
       propertyPath: m_RootOrder
