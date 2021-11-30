@@ -95,11 +95,9 @@ public class ScoreTracker : MonoBehaviour
 
     public void EndGame()
     {
-
         GameObject Save = GameObject.FindGameObjectWithTag("Save");
-        Save.GetComponent<SaveEngine>().SaveGame((int) Mathf.Ceil( score / 8f));
+        Save.GetComponent<SaveEngine>().SaveGame((int)score, (int) Mathf.Ceil(score / 8f), GameName.Plinko);
         SceneManager.LoadScene("Overworld", LoadSceneMode.Single);
-
     }
 
     public void Update()

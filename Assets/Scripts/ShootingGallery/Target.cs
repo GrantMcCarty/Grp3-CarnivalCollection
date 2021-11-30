@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    static int totalPoints = 0;
     public float speed = 5f;
     public bool flipped;
+    public bool hit;
 
     public int points;
     GameObject pointCounter;
     Vector3 startPos;
+    public AudioSource audioSource;
 
-    // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
+        audioSource = (transform.parent != null) ? transform.parent.GetComponent<AudioSource>() : GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 pos = transform.position;
@@ -27,18 +27,39 @@ public class Target : MonoBehaviour
         } else {
             pos.x += speed * Time.deltaTime;
         }
+        if(hit) {
+            Vector3 parentPos = Vector3.zero;
+            if(transform.parent != null) {
+                parentPos = transform.parent.position;
+                Quaternion rot = transform.parent.rotation;
+                if(rot.x <90) {
+                    rot.x += 1*Time.deltaTime;
+                    transform.parent.rotation = rot;
+                }
+            } 
+            else {
+                Quaternion rot = transform.rotation;
+                if(rot.x <90) {
+                    rot.x += 1*Time.deltaTime;
+                    transform.rotation = rot;
+                }
+            }
+            pos.y -= 0.55f*Time.deltaTime;
+            pos.z += 1.55f*Time.deltaTime;
+        }
         transform.position = pos;
         if(Vector3.Distance(startPos, transform.position) > 15) {
             Destroy(this.gameObject);
         }
     }
     public void ProcessHit() {
-        totalPoints += points;
-        Debug.Log("Current Points: " + totalPoints);
+        GameObject.FindWithTag("GameController").GetComponent<ManageGame>().scoreNum += points;
+        hit = true;
+        audioSource.Play();
         if(transform.parent != null) {
-            Destroy(transform.parent.gameObject);
+            Destroy(transform.parent.gameObject, 1);
         } else {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 1);
         }
     }
 }

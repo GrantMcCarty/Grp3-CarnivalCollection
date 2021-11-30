@@ -33,10 +33,10 @@ public class FPSController : MonoBehaviour
         {
             float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
             //rotation is tough here, left goes from 360 down and right goes from 0 up
-            if(!(rotationX > 320 || rotationX < 45)) {
-                float diff = Mathf.Abs(rotationX - 320f);
+            if(!(rotationX > 310 || rotationX < 48)) {
+                float diff = Mathf.Abs(rotationX - 310f);
                 //if difference of rotationX is close to 320 clamp it there else 45
-                rotationX = Mathf.Abs(rotationX - 320f) < 40 ? 321f : 44f;
+                rotationX = Mathf.Abs(rotationX - 310f) < 40 ? 311f : 47f;
             }
             rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
             rotationY = Mathf.Clamp(rotationY, -60f, 60f);
