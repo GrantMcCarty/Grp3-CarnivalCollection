@@ -16,6 +16,7 @@ public class Rifle:MonoBehaviour
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        canFire = true;
     }
 
     void Update() {
