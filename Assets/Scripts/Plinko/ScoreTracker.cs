@@ -111,4 +111,10 @@ public class ScoreTracker : MonoBehaviour
         }
     }
 
+    public void PlaySound()
+    {
+        AudioSource test = GetComponent<AudioSource>();
+        test.Play();
+    }
+
 }
