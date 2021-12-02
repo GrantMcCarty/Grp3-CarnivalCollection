@@ -1,3 +1,3 @@
 public enum GameName {
-    ShootingGallery, RingToss, Plinko, Skeeball
+    ShootingGallery, RingToss, Plinko, Skeeball, Overworld
 }
