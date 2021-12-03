@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public bool hit = false;
+    public bool crossedPlane = false;
     float waitTime = 0.5f;
 
     // Update is called once per frame

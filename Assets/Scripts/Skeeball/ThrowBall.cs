@@ -15,9 +15,9 @@ public class ThrowBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)) {
-            Throw();
-        }
+        // if(Input.GetMouseButtonDown(0)) {
+        //     Throw();
+        // }
         
     }
 
