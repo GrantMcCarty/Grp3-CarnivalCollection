@@ -28,18 +28,13 @@ public class GameManager : MonoBehaviour
     public bool isGameUnlocked(string name){
         switch(name){
             case "ShootingGallery": return true;
-            break;
             case "Plinko":
             Debug.Log(name); 
             Debug.Log(statistics.UnlockedPlinko);
             return statistics.UnlockedPlinko;
-            break;
             case "Skeeball": return statistics.UnlockedSkeeball;
-            break; 
             case "RingToss": return statistics.UnlockedRingToss;
-            break;
             default: return false;
-            break;
         }
     }
 

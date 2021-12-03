@@ -17,15 +17,10 @@ public class PlayerStatistics
     public int GetHighscore(string GameName){
         switch(GameName){
             case "ShootingGallery": return ShootingGalleryHighScore;
-            break;
             case "Plinko": return PlinkoHighScore;
-            break;
             case "Skeeball": return SkeeballHighScore;
-            break; 
             case "RingToss": return RingTossHighScore;
-            break;
             default: return 0;
-            break;
         }
     }
 }
