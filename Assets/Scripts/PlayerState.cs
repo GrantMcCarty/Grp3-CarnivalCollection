@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
-    PlayerStatistics localPlayerData = new PlayerStatistics();
-    void Start()
-    {
-        // localPlayerData = GlobalControl.Instance.savedPlayerData;
-    }
+        public PlayerStatistics localPlayerData = new PlayerStatistics();
 
-    public void SavePlayer()
-    {
-        GlobalControl.Instance.savedPlayerData = localPlayerData;
-    }
-    
-    void AddTickets(int amount){localPlayerData.Tickets += amount;}
+        // public void SavePlayer()
+        // {
+        //     GlobalControl.Instance.savedPlayerData = localPlayerData;
+        // }
+
+        public int AddTickets(int amount) 
+        { 
+            localPlayerData.Tickets += amount;
+        return localPlayerData.Tickets;
+        }
 
 }
