@@ -22,6 +22,8 @@ TagManager:
   - ZeroScore
   - Save
   - Gun
+  - Ring
+  - FollowCam
   layers:
   - Default
   - TransparentFX
