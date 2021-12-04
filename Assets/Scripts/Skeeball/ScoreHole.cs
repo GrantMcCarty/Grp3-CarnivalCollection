@@ -5,10 +5,18 @@ using UnityEngine;
 public class ScoreHole : MonoBehaviour
 {
     public int points;
-    // Start is called before the first frame update
+    AudioSource audio;
+
+    void Start() {
+        audio = GetComponent<AudioSource>();
+    }
+
     void OnTriggerEnter(Collider col) {
-        Debug.Log("Collision! Got " + points + " points!");
         col.gameObject.GetComponent<Ball>().hit = true;
         Destroy(col.gameObject, 2);
+        BallPlace ballPlace = GameObject.FindWithTag("BallPlace").GetComponent<BallPlace>();
+        ballPlace.SetScore(points);
+        ballPlace.SetScoreText();
+        audio.Play();
     }
 }

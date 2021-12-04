@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class RefundBall : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void OnTriggerEnter(Collider col) {
         if(col.gameObject.CompareTag("Respawn")) {
             GameObject ball = col.gameObject;
@@ -22,6 +11,7 @@ public class RefundBall : MonoBehaviour
                 Destroy(ball, 1);
                 GameObject ballPlace = GameObject.FindWithTag("BallPlace");
                 ballPlace.GetComponent<BallPlace>().ballsLeft++;
+                ballPlace.GetComponent<BallPlace>().SetBallsLeftText();
             }
             ball.GetComponent<Ball>().crossedPlane = true;
         }
