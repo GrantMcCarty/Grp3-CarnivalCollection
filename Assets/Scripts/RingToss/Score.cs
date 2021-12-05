@@ -14,12 +14,18 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CalculateScore();
         //update ui here
     }
 
-    public void IncreaseScore()
+    public void CalculateScore()
     {
-        score += 10;
-        //can add multiple values here
+        score = 0;
+        GameObject[] rings = GameObject.FindGameObjectsWithTag("Ring");
+        for (int i = 0; i < rings.Length; i++)
+        {
+            score += 10*rings[i].GetComponentInChildren<ScoreTrigger>().Register();
+        }
+        Debug.Log(score);
     }
 }

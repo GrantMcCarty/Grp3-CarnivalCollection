@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ScoreTrigger : MonoBehaviour
 {
-    MeshCollider check;
+    //MeshCollider check;
     int collide;
-    float timer = 0;
-    float limit = 2; //change this!
+    //float timer = 0;
+    //float limit = 2; //change this!
 
-    public Score score;
-    Collision touching;
+    //public Score score;
+    //Collision touching;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +36,19 @@ public class ScoreTrigger : MonoBehaviour
         {
             collide = 1;
         }
-        else collide = 0;
+        //else collide = 0;
     }
 
-    public void Register()
+    private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.tag == "Peg")
+        {
+            collide = 0;
+        }
+    }
 
+    public int Register()
+    {
+        return collide;
     }
 }

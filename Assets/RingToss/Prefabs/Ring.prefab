@@ -2480,9 +2480,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4722098959142328356}
   - component: {fileID: 47391511299594979}
+  - component: {fileID: 431289003286771548}
   m_Layer: 2
   m_Name: Scorer
-  m_TagString: Untagged
+  m_TagString: ScoreTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2514,6 +2515,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3499995
   m_Center: {x: -0.0000005245209, y: 0, z: 0}
+--- !u!114 &431289003286771548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5814586995005379672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd505c907605d444b035287d9b04e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6000344612161306550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3389,13 +3402,13 @@ PrefabInstance:
     - {fileID: 114073182108852144, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
     - {fileID: 135415070846369410, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
---- !u!4 &6876285611129785687 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4122938131327598, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
-  m_PrefabInstance: {fileID: 6873580030131889977}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6872571399269233593 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1015780934767744, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
+  m_PrefabInstance: {fileID: 6873580030131889977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6876285611129785687 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4122938131327598, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
   m_PrefabInstance: {fileID: 6873580030131889977}
   m_PrefabAsset: {fileID: 0}
