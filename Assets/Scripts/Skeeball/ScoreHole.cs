@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class ScoreHole : MonoBehaviour
 {
+    //points to be awarded onTriggerEnter
     public int points;
-    AudioSource audio;
+
+    //audio source to play a good/bad sound
+    AudioSource scoreAudio;
 
     void Start() {
-        audio = GetComponent<AudioSource>();
+        scoreAudio = GetComponent<AudioSource>();
     }
 
+    //On hit, destroy the object after two seconds, and update the score
     void OnTriggerEnter(Collider col) {
         col.gameObject.GetComponent<Ball>().hit = true;
         Destroy(col.gameObject, 2);
         BallPlace ballPlace = GameObject.FindWithTag("BallPlace").GetComponent<BallPlace>();
         ballPlace.SetScore(points);
         ballPlace.SetScoreText();
-        audio.Play();
+        scoreAudio.Play();
     }
 }

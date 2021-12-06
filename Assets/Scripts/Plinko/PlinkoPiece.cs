@@ -6,7 +6,7 @@ public class PlinkoPiece : MonoBehaviour
 {
     private GameObject hud;
     private ScoreTracker scoreTrackerScript;
-    public AudioSource audio;
+    public AudioSource plinkoAudio;
     public AudioClip pegHitSound;
 
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class PlinkoPiece : MonoBehaviour
     {
         hud = GameObject.FindWithTag("HUD");
         scoreTrackerScript = hud.GetComponent<ScoreTracker>();
-        audio = GetComponent<AudioSource>();
+        plinkoAudio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,8 +62,8 @@ public class PlinkoPiece : MonoBehaviour
     {
         if(other.gameObject.tag == "Peg")
         {
-            audio.clip = pegHitSound;
-            audio.Play();
+            plinkoAudio.clip = pegHitSound;
+            plinkoAudio.Play();
         }
     }
 }
