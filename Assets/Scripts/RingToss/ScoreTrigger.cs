@@ -36,12 +36,20 @@ public class ScoreTrigger : MonoBehaviour
         {
             collide = 1;
         }
+        else if (other.gameObject.tag == "Peg3")
+        {
+            collide = 3;
+        }
+        else if (other.gameObject.tag == "Peg5")
+        {
+            collide = 5;
+        }
         //else collide = 0;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Peg")
+        if (other.gameObject.tag == "Peg" || other.gameObject.tag == "Peg3" || other.gameObject.tag == "Peg5")
         {
             collide = 0;
         }

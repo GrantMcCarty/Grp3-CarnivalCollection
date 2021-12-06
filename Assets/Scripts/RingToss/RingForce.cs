@@ -14,8 +14,9 @@ public class RingForce : MonoBehaviour
     Rigidbody ring;
     Vector3 start;
     Vector3 end;
-    Camera camera1;
-    Camera camera2;
+    GameObject guide;
+
+    public AudioClip swoosh;
     float force;
     float direction;
     bool launched = false;
@@ -28,8 +29,8 @@ public class RingForce : MonoBehaviour
         //if (ring == null) ring = GameObject.FindWithTag("Ring");
         ringspawner = GameObject.FindWithTag("Respawn").GetComponent<RingSpawner>();
         ring = GetComponent<Rigidbody>();
-        //camera1 = Camera.main;
-        //camera2 = GameObject.FindGameObjectWithTag("FollowCamera").GetComponent<Camera>();
+        guide = GameObject.FindGameObjectWithTag("Guide");
+        guide.SetActive(true);
 
     }
 
@@ -61,9 +62,11 @@ public class RingForce : MonoBehaviour
                 if (direction < 0) dirAdj = -10;
 
                 Debug.Log(force);
+                ring.isKinematic = false;
+                Debug.Log("disabled");
                 ring.AddForce(new Vector3(dirAdj, 20, force/8), ForceMode.Impulse);
-                //camera1.enabled = false;
-                //camera2.enabled = true;
+                guide.SetActive(false);
+                gameObject.GetComponent<AudioSource>().PlayOneShot(swoosh);
                 launched = true;
             }
         }
@@ -87,5 +90,6 @@ public class RingForce : MonoBehaviour
         //Destroy(gameObject);
         //canSpawn = false;
         ringspawner.SpawnRingAccessor();
+        guide.SetActive(true);
     }
 }

@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
     int score;
+    GameObject HUD; 
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
+        HUD = GameObject.FindWithTag("HUD");
     }
 
     // Update is called once per frame
     void Update()
     {
         CalculateScore();
-        //update ui here
+        HUD.GetComponentInChildren<Text>().text = "SCORE : " + score;
     }
 
     public void CalculateScore()

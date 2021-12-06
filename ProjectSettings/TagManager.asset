@@ -23,7 +23,9 @@ TagManager:
   - Save
   - Gun
   - Ring
-  - FollowCam
+  - Guide
+  - Peg3
+  - Peg5
   layers:
   - Default
   - TransparentFX
