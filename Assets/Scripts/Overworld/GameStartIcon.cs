@@ -9,7 +9,7 @@ public class GameStartIcon : MonoBehaviour
    private bool isTouching = false;
    private GameObject hud;
    private TextHandler textHandler;
-
+   Component[] icons;
    private GameManager gm;
 
    public int ticketsToUnlock;
@@ -20,7 +20,8 @@ public class GameStartIcon : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
         hud = GameObject.FindWithTag("HUD");
         textHandler = hud.GetComponent<TextHandler>();
-        
+        icons = GetComponentsInChildren<SpriteRenderer>();
+        HideIcons();
     }
 
     // Update is called once per frame
@@ -41,6 +42,7 @@ public class GameStartIcon : MonoBehaviour
         Debug.Log("COLLIDE");
         isUnlocked = gm.isGameUnlocked(GameName);
         if(collision.gameObject.tag == "Player"){
+            ShowIcons();
             isTouching = true;
             textHandler.showGameText(GameName, isUnlocked, ticketsToUnlock);
             //SceneManager.LoadScene(GameName);
@@ -48,7 +50,7 @@ public class GameStartIcon : MonoBehaviour
     }
     void OnCollisionExit2D(Collision2D collision){
         if(collision.gameObject.tag == "Player"){
-            
+            HideIcons();
             isTouching = false;
             textHandler.hideGameText();
             //gameObject.transform.scale.x = 1f;
@@ -59,6 +61,22 @@ public class GameStartIcon : MonoBehaviour
         if (gm.Statistics.Tickets >= ticketsToUnlock){
             gm.buyGame(ticketsToUnlock, GameName);
             isUnlocked = true;
+        }
+    }
+
+    void ShowIcons(){
+        foreach(SpriteRenderer icon in icons){
+            if(icon.tag == "Icon"){
+                icon.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    void HideIcons(){
+        foreach(SpriteRenderer icon in icons){
+            if(icon.tag == "Icon"){
+                icon.gameObject.SetActive(false);
+            }
         }
     }
 }

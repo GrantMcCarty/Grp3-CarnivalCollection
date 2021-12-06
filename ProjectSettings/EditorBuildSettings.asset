@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld.unity
     guid: 0c959958d4f5dd144ac3579883bff8d0
   - enabled: 1
-    path: Assets/Scenes/Skee+Ball.unity
+    path: Assets/Scenes/SkeeBall.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/ShootingGallery.unity

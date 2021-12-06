@@ -18,7 +18,7 @@ public class TextHandler : MonoBehaviour
     // Update is called once per frame
     public void showGameText(string message, bool isUnlocked, int ticketsToUnlock){
         if(isUnlocked) bottomText.text = message + "\nHighscore: " + gm.Statistics.GetHighscore(message);
-        else bottomText.text = message + "\nLOCKED: PRESS SPACE TO UNLOCK (" + ticketsToUnlock + ")";
+        else bottomText.text = message + "\nPress Space to Unlock\n (" + ticketsToUnlock + ")";
         bottomText.gameObject.SetActive(true);
     }
 

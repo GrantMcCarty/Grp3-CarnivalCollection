@@ -26,11 +26,12 @@ TagManager:
   - Guide
   - Peg3
   - Peg5
+  - Icon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Top
   - Water
   - UI
   - 
@@ -62,4 +63,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Top
+    uniqueID: 1944239335
     locked: 0
