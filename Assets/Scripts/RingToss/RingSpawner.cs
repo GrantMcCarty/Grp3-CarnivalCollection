@@ -6,7 +6,7 @@ using UnityEngine;
 public class RingSpawner : MonoBehaviour
 {
     public GameObject ringPrefab;
-    
+    GameObject current;
     Camera camera1;
     Camera camera2;
     int ringsRemaining;
@@ -17,11 +17,9 @@ public class RingSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(ringPrefab, position , rotation);
-        //camera1 = Camera.main;
-        //camera2 = GameObject.FindGameObjectWithTag("FollowCamera").GetComponent<Camera>();
-        //camera2.enabled = false;
-        //camera1.enabled = true;
+        current = Instantiate(ringPrefab, position , rotation);
+        current.GetComponent<Rigidbody>().isKinematic = true;
+        
         ringsRemaining = 2;
     }
 
@@ -33,7 +31,7 @@ public class RingSpawner : MonoBehaviour
             if (ringsRemaining > 0)
             {
                 Instantiate(ringPrefab, position, rotation);
-                //ringsRemaining--;
+                ringsRemaining--;
                 createNew = false;
             }
             else

@@ -2840,6 +2840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830bcd8183035944088307242b6dbed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swoosh: {fileID: 8300000, guid: 3b48fa03912264d43b8763cf7787e6dc, type: 3}
 --- !u!1 &6885388425390246328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3392,6 +3393,14 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9bee1ece51592f843996472527e9e1bc, type: 2}
     - target: {fileID: 82399120985686150, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82399120985686150, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b48fa03912264d43b8763cf7787e6dc, type: 3}
+    - target: {fileID: 82399120985686150, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 135415070846369410, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
