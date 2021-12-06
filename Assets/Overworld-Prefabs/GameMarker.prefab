@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4458629464746300708}
   - component: {fileID: 4458629464746300709}
   - component: {fileID: 4458629464746300714}
-  - component: {fileID: 4458629464746300711}
+  - component: {fileID: 8820574947648292909}
   m_Layer: 0
   m_Name: GameMarker
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c2baf34743528248b73569a44d9a51c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e36b7b31425eef44e804b578adb9ef49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,8 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameName: ShootingGallery
---- !u!58 &4458629464746300711
-CircleCollider2D:
+  ticketsToUnlock: 0
+--- !u!61 &8820574947648292909
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,5 +112,15 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 23.045626, y: 20.48}
+    newSize: {x: 1.57, y: 1.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.785
+  m_Size: {x: 23.045626, y: 20.48}
+  m_EdgeRadius: 0

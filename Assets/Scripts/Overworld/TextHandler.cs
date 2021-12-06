@@ -7,7 +7,7 @@ public class TextHandler : MonoBehaviour
     // Start is called before the first frame update
     public Text bottomText;
     public Text ticketText;
-    const string ticketTitle = "Tickets: ";
+    const string ticketTitle = ": ";
     GameManager gm; 
     void Start()
     {
