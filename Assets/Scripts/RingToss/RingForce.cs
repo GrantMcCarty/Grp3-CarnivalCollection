@@ -33,7 +33,7 @@ public class RingForce : MonoBehaviour
         guide.SetActive(true);
 
     }
-
+    //Click and drag BACKWARDS to throw
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

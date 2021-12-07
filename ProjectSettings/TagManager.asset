@@ -28,6 +28,7 @@ TagManager:
   - Peg5
   - Icon
   - Manager
+  - Music
   layers:
   - Default
   - TransparentFX
