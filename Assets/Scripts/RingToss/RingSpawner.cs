@@ -7,8 +7,7 @@ public class RingSpawner : MonoBehaviour
 {
     public GameObject ringPrefab;
     GameObject current;
-    Camera camera1;
-    Camera camera2;
+    GameSystem gameSystem;
     int ringsRemaining;
     Vector3 position = new Vector3(-150, 25, -270);
     Quaternion rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
@@ -19,7 +18,8 @@ public class RingSpawner : MonoBehaviour
     {
         current = Instantiate(ringPrefab, position , rotation);
         current.GetComponent<Rigidbody>().isKinematic = true;
-        
+        gameSystem = GameObject.FindWithTag("Manager").GetComponent<GameSystem>();
+        Debug.Log(gameSystem);
         ringsRemaining = 2;
     }
 
@@ -36,7 +36,9 @@ public class RingSpawner : MonoBehaviour
             }
             else
             {
-                //gameoverthing
+                Debug.Log("ednig");
+                gameSystem.EndGame();
+                createNew = false;
             }
         }
     }

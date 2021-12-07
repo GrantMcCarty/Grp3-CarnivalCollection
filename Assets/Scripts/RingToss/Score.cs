@@ -11,14 +11,14 @@ public class Score : MonoBehaviour
     void Start()
     {
         score = 0;
-        HUD = GameObject.FindWithTag("HUD");
+        HUD = GameObject.FindWithTag("SmallScore");
     }
 
     // Update is called once per frame
     void Update()
     {
         CalculateScore();
-        HUD.GetComponentInChildren<Text>().text = "SCORE : " + score;
+        HUD.GetComponent<Text>().text = "SCORE : " + score;
     }
 
     public void CalculateScore()
@@ -29,6 +29,11 @@ public class Score : MonoBehaviour
         {
             score += 10*rings[i].GetComponentInChildren<ScoreTrigger>().Register();
         }
-        Debug.Log(score);
+        //Debug.Log(score);
+    }
+    public int AccessScore()
+    {
+        CalculateScore();
+        return score;
     }
 }

@@ -27,6 +27,7 @@ TagManager:
   - Peg3
   - Peg5
   - Icon
+  - Manager
   layers:
   - Default
   - TransparentFX
