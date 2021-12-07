@@ -24,15 +24,15 @@ public class GameSystem : MonoBehaviour
         //Debug.Log("jaskdf");
         GameObject.FindGameObjectWithTag("ZeroScore").GetComponent<Text>().text = "YOU RECEIVED " + tickets + " TICKETS!";
         //Debug.Log("in method");
-        SaveEngine save = GameObject.FindWithTag("Manager").GetComponent<SaveEngine>();
-        //Debug.Log(save);
+        SaveEngine save = GameObject.FindWithTag("Save").GetComponent<SaveEngine>();
+        Debug.Log(save);
         save.SaveGame(fin, tickets, GameName.RingToss);
         //Debug.Log("saved");
         StartCoroutine(BackToHub());
     }
     IEnumerator BackToHub()
     {
-        //Debug.Log("in cor");
+        Debug.Log("in cor");
         yield return new WaitForSecondsRealtime(5);
         SceneManager.LoadScene("Overworld");
     }

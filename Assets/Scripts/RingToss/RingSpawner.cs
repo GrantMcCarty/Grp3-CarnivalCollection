@@ -20,7 +20,7 @@ public class RingSpawner : MonoBehaviour
         current.GetComponent<Rigidbody>().isKinematic = true;
         gameSystem = GameObject.FindWithTag("Manager").GetComponent<GameSystem>();
         Debug.Log(gameSystem);
-        ringsRemaining = 2;
+        ringsRemaining = 0;
     }
 
     // Update is called once per frame
