@@ -7,7 +7,7 @@ public class Lights : MonoBehaviour
     Light lightA;
     Light lightB;
 
-    float timeOn = 2f;
+    float timeOn = 4f;
     float timeOff = .3f;
 
     private float change = 0;

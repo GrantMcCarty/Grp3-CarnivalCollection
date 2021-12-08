@@ -13,6 +13,7 @@ public class GameSystem : MonoBehaviour
     {
         score = GameObject.FindWithTag("LargeScore").GetComponent<Score>();
         Debug.Log(score);
+        Cursor.visible = true;
     }
     public void EndGame()
     {
