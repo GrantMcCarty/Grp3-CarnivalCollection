@@ -33,6 +33,8 @@ public class ManageGame : MonoBehaviour
             ticketAwardText.text = "You got " + tickets + " tickets!";
             GameObject Save = GameObject.FindWithTag("Save");
             Save.GetComponent<SaveEngine>().SaveGame(scoreNum, tickets, GameName.ShootingGallery);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             Invoke("BackToHub", 3f);
             saved = true;
         }  else {
