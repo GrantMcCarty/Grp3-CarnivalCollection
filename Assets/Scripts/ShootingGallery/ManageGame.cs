@@ -29,7 +29,7 @@ public class ManageGame : MonoBehaviour
             Debug.Log("Game has ended!");
             GameObject.FindWithTag("Player").GetComponent<FPSController>().canMove = false;
             GameObject.FindWithTag("Gun").GetComponent<Rifle>().canFire = false;
-            int tickets = (int) Mathf.Ceil(scoreNum/50);
+            int tickets = (int) Mathf.Ceil(scoreNum/100);
             ticketAwardText.text = "You got " + tickets + " tickets!";
             GameObject Save = GameObject.FindWithTag("Save");
             Save.GetComponent<SaveEngine>().SaveGame(scoreNum, tickets, GameName.ShootingGallery);

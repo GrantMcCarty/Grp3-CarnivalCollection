@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Plinko.unity
     guid: 9381c8a43d53784489b15a563300f8d2
+  - enabled: 1
+    path: Assets/Scenes/RingToss.unity
+    guid: 025f77ffbd2ede74d837ec76a848e720
   m_configObjects: {}
