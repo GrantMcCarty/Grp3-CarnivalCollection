@@ -13,8 +13,10 @@ public class GameStartIcon : MonoBehaviour
    private GameManager gm;
 
    public int ticketsToUnlock;
-
+   public GameObject instructions; 
    private bool isUnlocked;
+
+   private bool isInstructions;
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
@@ -22,19 +24,32 @@ public class GameStartIcon : MonoBehaviour
         textHandler = hud.GetComponent<TextHandler>();
         icons = GetComponentsInChildren<SpriteRenderer>();
         HideIcons();
+        instructions.gameObject.SetActive(false);
+        isInstructions = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(isTouching && Input.GetKeyDown("space") && isUnlocked){
-            SceneManager.LoadScene(GameName);
+            ShowInstuctions();  
         }
         else if(isTouching && Input.GetKeyDown("space") && !isUnlocked){
             Debug.Log("TRYING TO UNLOCK");
             UnlockGame();
             textHandler.showGameText(GameName, isUnlocked, ticketsToUnlock);
 
+        }
+        if(isTouching && isUnlocked && Input.GetKeyDown("f") && isInstructions)
+        {
+            SceneManager.LoadScene(GameName);
+        }
+        if(isTouching && isUnlocked && Input.GetKeyDown("escape") && isInstructions)
+        {
+            HideInstructions();
+        }
+        if(!isTouching && isInstructions){
+            HideInstructions();
         }
     }
 
@@ -78,5 +93,12 @@ public class GameStartIcon : MonoBehaviour
                 icon.gameObject.SetActive(false);
             }
         }
+    }
+    void ShowInstuctions(){
+        isInstructions = true;
+        instructions.gameObject.SetActive(true);
+    }
+    void HideInstructions(){
+    instructions.gameObject.SetActive(false);
     }
 }
